@@ -7,11 +7,16 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { callGeminiAI } from "@/lib/api";
 import { toast } from "@/components/ui/use-toast";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
+
+const formatMessage = (text: string) => {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+};
 
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -79,15 +84,15 @@ const Chat = () => {
         <div className="max-w-3xl mx-auto px-4">
           <h1 className="text-3xl font-bold mb-6 text-center text-[#2b2b2b]">Financial Literacy Assistant</h1>
 
-          <Card className="h-[70vh] flex flex-col mx-auto">
+          <Card className="h-[85vh] flex flex-col mx-auto overflow-hidden">
             <CardHeader>
               <CardTitle>Chat with AI Assistant</CardTitle>
               <CardDescription>
                 Ask any questions about personal finance, investments, or budgeting
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex-1 flex flex-col">
-              <ScrollArea className="flex-1 pr-4 h-[calc(70vh-200px)]">
+            <CardContent className="flex-1 flex flex-col overflow-hidden">
+              <ScrollArea className="flex-1 pr-4 overflow-y-auto">
                 <div className="space-y-4 pb-2">
                   {messages.map((message, index) => (
                       <div
@@ -97,14 +102,13 @@ const Chat = () => {
                           }`}
                       >
                         <div
-                            className={`rounded-lg px-4 py-2 max-w-[80%] ${
+                            className={`rounded-lg px-4 py-2 max-w-full sm:max-w-[80%] break-words whitespace-pre-wrap overflow-x-auto ${
                                 message.role === "user"
                                     ? "bg-green-600 text-white"
                                     : "bg-gray-100 text-gray-800"
                             }`}
-                        >
-                          {message.content}
-                        </div>
+                            dangerouslySetInnerHTML={{ __html: formatMessage(message.content) }}
+                        />
                       </div>
                   ))}
                   <div ref={messagesEndRef} />

@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { callGeminiAI } from "@/lib/api";
 import { toast } from "@/components/ui/use-toast";
 import { useFinancial } from "@/context/FinancialContext";
+import ReactMarkdown from "react-markdown";
 
 const Investments = () => {
   const { financialData, updateFinancialData } = useFinancial();
@@ -28,6 +29,10 @@ const Investments = () => {
       });
     }
   }, [income, savings, riskProfile, updateFinancialData]);
+
+  const formatMessage = (text: string) => {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  };
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -136,14 +141,7 @@ const Investments = () => {
               </CardHeader>
               <CardContent>
                 <div className="prose prose-sm max-w-none">
-                  {strategyResult.split('\n\n').map((paragraph, index) => {
-                    if (paragraph.startsWith('#')) {
-                      const headerText = paragraph.replace(/^#+\s/, '');
-                      return <h3 key={index} className="text-lg font-semibold mt-4 mb-2">{headerText}</h3>;
-                    } else {
-                      return <p key={index} className="mb-3">{paragraph}</p>;
-                    }
-                  })}
+                  <ReactMarkdown>{strategyResult}</ReactMarkdown>
                 </div>
               </CardContent>
             </Card>

@@ -9,6 +9,7 @@ import { callGeminiAI } from "@/lib/api";
 import { toast } from "@/components/ui/use-toast";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { useFinancial } from "@/context/FinancialContext";
+import ReactMarkdown from "react-markdown";
 
 interface BudgetData {
   name: string;

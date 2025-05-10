@@ -90,6 +90,10 @@
   }
 }
 
+strong {
+  @apply font-bold text-[#2b2b2b];
+}
+
 @layer base {
   * {
     @apply border-border;
