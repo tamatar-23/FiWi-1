@@ -1,12 +1,11 @@
 
 // Gemini AI API utility functions
 
-// Get API key from environment variables
-export const GEMINI_API_KEY = "AIzaSyDY3SKcBrmkUTi4jIQhZnG_NDU0dZWKpfM";
+export const apiKey = "AIzaSyDY3SKcBrmkUTi4jIQhZnG_NDU0dZWKpfM";
 
-export const callGeminiAI = async (prompt: string, model: string = "gemini-pro") => {
+export const callGeminiAI = async (prompt: string, model: string = "gemini-2.0-flash") => {
   try {
-    if (!GEMINI_API_KEY) {
+    if (!apiKey) {
       throw new Error("Gemini API key is missing.");
     }
     
@@ -16,7 +15,7 @@ export const callGeminiAI = async (prompt: string, model: string = "gemini-pro")
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-goog-api-key": GEMINI_API_KEY,
+        "x-goog-api-key": apiKey,
       },
       body: JSON.stringify({
         contents: [{ 

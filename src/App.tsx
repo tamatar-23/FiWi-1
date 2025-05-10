@@ -7,8 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FinancialProvider } from "./context/FinancialContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
-// Feature pages will be imported here
 import Budget from "./pages/Budget";
 import Investments from "./pages/Investments";
 import Chat from "./pages/Chat";
