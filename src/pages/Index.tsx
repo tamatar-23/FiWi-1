@@ -31,7 +31,7 @@ const Index = () => {
             <Link to="/budget" className="transform transition-all duration-300 hover:scale-105">
               <Card className="h-full hover:shadow-lg transition-shadow border-green-100 overflow-hidden group relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <PiggyBank size={48} className="text-green-500 opacity-50" />
+                  <PiggyBank size={60} className="text-green-500 opacity-20" />
                 </div>
                 <CardHeader className="relative z-10">
                   <CardTitle className="text-green-700">Budget Planner</CardTitle>
@@ -46,10 +46,10 @@ const Index = () => {
             <Link to="/investments" className="transform transition-all duration-300 hover:scale-105">
               <Card className="h-full hover:shadow-lg transition-shadow border-green-100 overflow-hidden group relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <TrendingUp size={48} className="text-green-500 opacity-50" />
+                  <TrendingUp size={60} className="text-green-500 opacity-20" />
                 </div>
                 <CardHeader className="relative z-10">
-                  <CardTitle className="text-green-700">Investment Strategy</CardTitle>
+                  <CardTitle className="text-green-700">Investment Plan</CardTitle>
                   <CardDescription>Plan your investments</CardDescription>
                 </CardHeader>
                 <CardContent className="relative z-10">
@@ -61,7 +61,7 @@ const Index = () => {
             <Link to="/chat" className="transform transition-all duration-300 hover:scale-105">
               <Card className="h-full hover:shadow-lg transition-shadow border-green-100 overflow-hidden group relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <MessageCircle size={48} className="text-green-500 opacity-50" />
+                  <MessageCircle size={60} className="text-green-500 opacity-20" />
                 </div>
                 <CardHeader className="relative z-10">
                   <CardTitle className="text-green-700">Financial Assistant</CardTitle>
@@ -76,7 +76,7 @@ const Index = () => {
             <Link to="/score" className="transform transition-all duration-300 hover:scale-105">
               <Card className="h-full hover:shadow-lg transition-shadow border-green-100 overflow-hidden group relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <BarChart size={48} className="text-green-500 opacity-50" />
+                  <BarChart size={60} className="text-green-500 opacity-20" />
                 </div>
                 <CardHeader className="relative z-10">
                   <CardTitle className="text-green-700">Financial Score</CardTitle>
