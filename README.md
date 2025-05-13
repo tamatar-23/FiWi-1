@@ -36,7 +36,7 @@ This project was built using:
 1. Clone the repository
 ```bash
 git clone https://github.com/tamatar-23/FiWi-1.git
-cd financialwise
+cd FiWi-1
 ```
 
 2. Install dependencies
