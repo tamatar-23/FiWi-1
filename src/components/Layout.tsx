@@ -13,34 +13,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center">
             <Link to="/" className="text-2xl font-bold text-green-800 hover:text-green-700 transition-colors flex items-center">
-              <span className="mr-2">💰</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500">
                 FinancialWise
               </span>
             </Link>
             <ul className="flex space-x-6">
               <li>
-                <Link to="/" className="text-[#2b2b2b] hover:text-green-600 transition-colors">
-                  Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link to="/budget" className="text-[#2b2b2b] hover:text-green-600 transition-colors">
+                <Link to="/budget" className="text-[#2b2b2b] font-semibold hover:text-green-600 transition-colors">
                   Budget
                 </Link>
               </li>
               <li>
-                <Link to="/investments" className="text-[#2b2b2b] hover:text-green-600 transition-colors">
+                <Link to="/investments" className="text-[#2b2b2b] font-semibold hover:text-green-600 transition-colors">
                   Investments
                 </Link>
               </li>
               <li>
-                <Link to="/chat" className="text-[#2b2b2b] hover:text-green-600 transition-colors">
+                <Link to="/chat" className="text-[#2b2b2b] font-semibold hover:text-green-600 transition-colors">
                   Chat
                 </Link>
               </li>
               <li>
-                <Link to="/score" className="text-[#2b2b2b] hover:text-green-600 transition-colors">
+                <Link to="/score" className="text-[#2b2b2b] font-semibold hover:text-green-600 transition-colors">
                   Financial Score
                 </Link>
               </li>
